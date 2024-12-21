@@ -3,8 +3,16 @@
 
 #include "list.h"
 
+// Student : Salameh Alfasatleh ID: 20578169
+
+#include <pthread.h>
+
 typedef struct BlockingQueue {
-  /* Add fields as needed */
+  ListT* list;                
+  pthread_mutex_t mutex;      
+  pthread_cond_t cond;        
+  int terminated;             
+  int length;                 
 } BlockingQueueT;
 
 void blocking_queue_create(BlockingQueueT* queue);
