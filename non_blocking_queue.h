@@ -3,8 +3,13 @@
 
 #include "list.h"
 
+// Student : Salameh Alfasatleh ID: 20578169
+#include <pthread.h>
+
 typedef struct NonBlockingQueue {
-  /* Add fields as needed */
+  ListT* list;
+  pthread_mutex_t mutex;
+  int length;
 } NonBlockingQueueT;
 
 void non_blocking_queue_create(NonBlockingQueueT* queue);
