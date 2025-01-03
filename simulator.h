@@ -3,15 +3,24 @@
 
 #include "evaluator.h"
 
+// Student: Salameh Alfasatleh ID: 20578169
+
 typedef unsigned int ProcessIdT;
 
 typedef enum ProcessState {
-  unallocated,
-  ready,
-  running,
-  blocked,
-  terminated
+    unallocated,
+    ready,
+    running,
+    blocked,
+    terminated
 } ProcessStateT;
+
+typedef struct {
+    ProcessIdT pid;
+    ProcessStateT state;
+    EvaluatorCodeT code;  // Code the process will execute
+    unsigned int PC;      // Program Counter to track execution state
+} ProcessControlBlock;
 
 void simulator_start(int threads, int max_processes);
 void simulator_stop();
